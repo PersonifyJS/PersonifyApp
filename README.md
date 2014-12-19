@@ -1,12 +1,12 @@
-# Sound-Visualizer
+# 
 
 > 
 
 ## Team
 
-  - __Product Owner__: 
-  - __Scrum Master__: 
-  - __Development Team Members__: 
+  - __Product Owner__: [Rohan Agrawal](https://github.com/rohanagrawal)
+  - __Scrum Master__: [Phil Elauria](https://github.com/philelauria)
+  - __Development Team Members__: [Essam Al Joubori](https://github.com/essamjoubori)
 
 ## Table of Contents
 
