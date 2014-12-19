@@ -1,0 +1,12 @@
+.profile-image{
+  width: 80px;
+  height: 80px
+}
+.waiting-list {
+  float:right;
+  position: relative; 
+  top: -230px; 
+  margin-right: 200px;
+  border: 1px solid black;
+  padding: 0px 40px 30px 40px;
+}
