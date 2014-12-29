@@ -1,0 +1,19 @@
+{
+  "name": "Aletheia",
+  "version": "1.0.0",
+  "authors": "",
+  "license": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.2.18",
+    "angular-route": "~1.2.18",
+    "angular-mocks": "~1.2.18",
+    "angular-ui-router": "*",
+    "jquery": "~2.1.1",
+    "bootstrap": "*"
+  }
+}
