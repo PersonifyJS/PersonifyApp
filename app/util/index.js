@@ -66,6 +66,7 @@
     });
 
     function clicked(d) {
+      console.log(d.id)
       if (active.node() === this) return reset();
       // ========= The link between front and server ===============
       d3.json('/geo.json', function(err, data) {
