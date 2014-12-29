@@ -13,6 +13,8 @@ var flatten = require('./flatten');
 // TODO: To be removed from app files
 // var dummy_text = require('./dummy_text').text;
 
+// here's a comment
+
 var app = express();
 
 app.use('/', express.static(path.join(__dirname, 'public')));
