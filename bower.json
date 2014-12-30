@@ -14,6 +14,7 @@
     "angular-mocks": "~1.2.18",
     "angular-ui-router": "*",
     "jquery": "~2.1.1",
-    "bootstrap": "*"
+    "bootstrap": "*",
+    "angular-ui-bootstrap-bower": "~0.11.0"
   }
 }

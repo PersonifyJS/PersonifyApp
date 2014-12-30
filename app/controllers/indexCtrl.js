@@ -26,7 +26,7 @@
 
     // D3 =========================
     // we define d3 us-map here
-    var width = 1680,
+    var width = 1280,
         height = 800,
         active = d3.select(null);
 
@@ -66,20 +66,19 @@
     });
 
     function clicked(d) {
-      console.log(d.id);
       if (active.node() === this) return reset();
-      // ========= The link between front and server ===============
+      // ========= The link between the client and the server ===============
       d3.json('/geo.json', function(err, data) {
         var geoLocation = (data[d.id].geo);
         console.log(geoLocation);
         // sending data (geo location and the end user search criteria) to server
         // a post request with data to twitter
-        $http.post('/map', {geo: geoLocation, subject: $scope.search.val })
-          .success(function(data){
+       // $http.post('/map', {geo: geoLocation, subject: $scope.search.val })
+         // .success(function(data){
             // on success, the `data` is the data from Watson
             // the data is the big 5 for a collection of tweets
-            console.log(data);
-          });
+          //  console.log(data);
+         // });
       });
       
       active.classed("active", false);
