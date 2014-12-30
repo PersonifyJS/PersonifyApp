@@ -11,7 +11,7 @@ var gulp      = require('gulp'),
 // the paths to our app files
 var paths = {
   // all our client app js files, not including 3rd party js files
-  scripts: ['app/util/*.js'],
+  scripts: [ 'server/*.js', 'app/util/*.js'],
   html: ['client/app/**/*.html', 'client/index.html'],
   styles: ['client/styles/style.css'],
   test: ['specs/**/*.js']

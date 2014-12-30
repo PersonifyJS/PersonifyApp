@@ -73,12 +73,12 @@
         console.log(geoLocation);
         // sending data (geo location and the end user search criteria) to server
         // a post request with data to twitter
-       // $http.post('/map', {geo: geoLocation, subject: $scope.search.val })
-         // .success(function(data){
+        $http.post('/map', {geo: geoLocation, subject: $scope.search.val })
+          .success(function(data){
             // on success, the `data` is the data from Watson
             // the data is the big 5 for a collection of tweets
-          //  console.log(data);
-         // });
+            console.log(data);
+          });
       });
       
       active.classed("active", false);
