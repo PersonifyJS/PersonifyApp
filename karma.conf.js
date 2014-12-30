@@ -18,6 +18,7 @@ module.exports = function(config) {
       'app/public/bower_components/angular/angular.js',
       'app/public/bower_components/angular-route/angular-route.js',
       'app/public/bower_components/angular-mocks/angular-mocks.js',
+      'app/public/bower_components/angular-ui-router/release/angular-ui-router.js',
 
       // our app code
       'app/util/index.js',
@@ -45,7 +46,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['nyan','unicorn'],
+    reporters: ['nyan'],
 
 
     // web server port
@@ -62,7 +63,7 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
+    autoWatch: true,
 
 
     // start these browsers
