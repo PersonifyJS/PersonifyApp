@@ -18,10 +18,13 @@ module.exports = function(config) {
       'app/public/bower_components/angular/angular.js',
       'app/public/bower_components/angular-route/angular-route.js',
       'app/public/bower_components/angular-mocks/angular-mocks.js',
+      'app/public/bower_components/angular-ui-router/release/angular-ui-router.js',
+      'app/public/bower_components/angular-ui-bootstrap-bower/ui-bootstrap.js',
+      'http://d3js.org/d3.v3.js',
 
       // our app code
       'app/util/index.js',
-      'app/views/*.html',
+      // 'app/views/*.html',
 
       // our spec files
       'node_modules/expect.js/index.js',
