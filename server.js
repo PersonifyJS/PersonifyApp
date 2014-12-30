@@ -16,6 +16,7 @@ var app = express();
 app.use('/', express.static(path.join(__dirname, '/app/public')));
 app.use('/', express.static(path.join(__dirname, '/app/views')));
 app.use('/', express.static(path.join(__dirname, '/app/util')));
+app.use('/', express.static(path.join(__dirname, '/app/controllers')));
 
 app.set('views', __dirname + '/app/views');
 

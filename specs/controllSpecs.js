@@ -30,9 +30,7 @@ describe('MapCtrl', function () {
 
   it('Should call the d3 function when the controller is loaded', function(){
     createController();
-    $httpBackend.expectGET('/states.json').respond(data);
-    expect(data).to.be.an('object');
-
+    expect(d3.json).to.be.an('function');
   });
   
 });

@@ -23,7 +23,7 @@ module.exports = function(config) {
       'http://d3js.org/d3.v3.js',
 
       // our app code
-      'app/util/index.js',
+      'app/controllers/indexCtrl.js',
       // 'app/views/*.html',
 
       // our spec files
