@@ -1,32 +1,88 @@
 /*output css
 =========*/
-/*.output {
-  width: 50%;
+.output {
+  width: 100%;
 }
 
 .graph {
-  width: 100%;
-  background-color: #2980b9;
-  height: 2px;
-  margin-bottom: 10px;
+  width: 1000px;
+  background-color: #6C7A89;
+  height: 1px;
+  margin-bottom: 50px;
 }
 
-.output .pointer {
-  width: 10px;
-  height: 10px;
-  background-color: #2ecc71; 
-  margin-bottom: 2px;
+.output .circle {
+  width: 20px;
+  height: 20px;
   border-radius: 25px;
-}
-
-#a1 {
-  margin-left: ;
   position: absolute;
-}*/
-
-.points {
-  background-color: red;
+  margin-top: -60px;
 }
+
+.us{
+  background-color: #4183D7;
+  display: none;
+}
+
+.state {
+  background-color: #D64541;
+  display: none;
+}
+
+/* Loading spinner
+=============== */
+.spinner {
+  display: none;
+  position: absolute !important;
+  margin: 100px 40%;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  
+  -webkit-animation: rotate 2.0s infinite linear;
+  animation: rotate 2.0s infinite linear;
+}
+
+.dot1, .dot2 {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: #4183D7;
+  border-radius: 100%;
+  
+  -webkit-animation: bounce 2.0s infinite ease-in-out;
+  animation: bounce 2.0s infinite ease-in-out;
+}
+
+.dot2 {
+  top: auto;
+  bottom: 0px;
+  background-color: #D64541;
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes rotate { 100% { -webkit-transform: rotate(360deg) }}
+@keyframes rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+
+@-webkit-keyframes bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
 
 /*map css
 =========*/

@@ -66,23 +66,30 @@
     });
 
     function clicked(d) {
+      
+      
+
       if (active.node() === this) return reset();
       // ========= The link between the client and the server ===============
       d3.json('/geo.json', function(err, data) {
+        // activate the loading icon
+        $('.spinner').show();
         var geoLocation = (data[d.id].geo);
         console.log(geoLocation);
-        // sending data (geo location and the end user search criteria) to server
-        // a post request with data to twitter
+        //sending data (geo location and the end user search criteria) to server
+        //a post request with data to twitter
         $http.post('/map', {geo: geoLocation, subject: $scope.search.val })
            .success(function(data){
-            graphIt(data);
-            // no enough data found!
+            // disable the loading icon
+            $('.spinner').hide();
+            // in case no enough data found raise an error
             if (data.hasOwnProperty("error")) {
               console.log(data["error"]);
+              sweetAlert({ title: "Watson says:",   text: "Oh, dear. It looks like there aren't enough tweets to conduct an analysis. Kindly send me another search query." });
             } else {
               // on success, the `data` is the data from Watson
               // the data is the big 5 for a collection of tweets
-              console.log(data);
+              graphIt(data);
             }
            });
       });
