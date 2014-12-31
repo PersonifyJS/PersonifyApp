@@ -1,9 +1,19 @@
 <div ng-controller="MapCtrl">
-<form>
-  <input type="text" name="searchVal"
-    ng-model="search.val"
-    ng-model-options="{ getterSetter: true }"/>
-</form>
+  <form>
+    <input type="text" name="searchVal"
+      ng-model="search.val"
+      ng-model-options="{ getterSetter: true }"/>
+  </form>
+  <div id='resultsContainer'>
+    <!-- d3 output graph -->
+  </div>
+  <!-- <div class="output">
+    <div class="graph"><div id="a1" class="pointer"></div><div id="b1" class="pointer"></div></div>
+    <div class="graph"><div id="a2" class="pointer"></div><div id="b2" class="pointer"></div></div>
+    <div class="graph"><div id="a3" class="pointer"></div><div id="b3" class="pointer"></div></div>
+    <div class="graph"><div id="a4" class="pointer"></div><div id="b4" class="pointer"></div></div>
+    <div class="graph"><div id="a5" class="pointer"></div><div id="b5" class="pointer"></div></div>
+  </div> -->
 </div>
 
 
