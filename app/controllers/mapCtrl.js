@@ -74,11 +74,17 @@
         // sending data (geo location and the end user search criteria) to server
         // a post request with data to twitter
         $http.post('/map', {geo: geoLocation, subject: $scope.search.val })
-          .success(function(data){
-            // on success, the `data` is the data from Watson
-            // the data is the big 5 for a collection of tweets
-            console.log(data);
-          });
+           .success(function(data){
+            graphIt(data);
+            // no enough data found!
+            if (data.hasOwnProperty("error")) {
+              console.log(data["error"]);
+            } else {
+              // on success, the `data` is the data from Watson
+              // the data is the big 5 for a collection of tweets
+              console.log(data);
+            }
+           });
       });
       
       active.classed("active", false);
@@ -107,7 +113,7 @@
           .style("stroke-width", "1.5px")
           .attr("transform", "");
     }
-    // ========= end of D3 us-map ======================
+    // ========= end of D3 US-map ======================
 
   }]);
 })();

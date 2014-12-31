@@ -14,6 +14,7 @@ var service_url = "https://gateway.watsonplatform.net/systemu/service/";
 var service_username = "12312a68-fdff-4064-9928-eb088a960815";
 var service_password = "KUwy0neR5kpV";
 
+// Object to be sent to the client 
 var flatTraitsArray = {USdata: null, stateData: null};
 
 
@@ -56,7 +57,7 @@ module.exports.watson =  function(data, res, called) {
       'Authorization' :  auth }
     };
 
-  create_profile_request(profile_options, data)(function(error,profile_string) {
+  create_profile_request(profile_options, data, res)(function(error,profile_string) {
     console.log('dataFromTwitterUS', data);
     if (error) console.log(error);
     else {
@@ -89,7 +90,7 @@ module.exports.watson =  function(data, res, called) {
 
 // creates a request function using the https options and the text in content
 // the function that return receives a callback
-var create_profile_request = function(options,content) {
+var create_profile_request = function(options,content, res) {
   return function (/*function*/ callback) {
     // create the post data to send to the User Modeling service
     var post_data = {
@@ -115,6 +116,8 @@ var create_profile_request = function(options,content) {
 
         if (result.statusCode != 200) {
           var error = JSON.parse(response_string);
+          // render error if the results are less than 100 words
+          res.send({"error" : "Watson: Oh, dear. It looks like there aren't enough tweets to conduct an analysis. Kindly send me another search query."});
           callback({'message': error.user_message}, null);
         } else
           callback(null,response_string);

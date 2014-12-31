@@ -11,10 +11,10 @@ var gulp      = require('gulp'),
 // the paths to our app files
 var paths = {
   // all our client app js files, not including 3rd party js files
-  scripts: [ 'server/*.js', 'app/util/*.js'],
-  html: ['client/app/**/*.html', 'client/index.html'],
+  scripts: [ 'server/server.js', 'app/util/*.js'],
+  html: ['app/**/*.html', 'index.html'],
   styles: ['client/styles/style.css'],
-  test: ['specs/**/*.js']
+  test: ['specs/*.js']
 };
 
 // any changes made to your
@@ -36,7 +36,7 @@ gulp.task('karma', shell.task([
 
 // start our node server using nodemon
 gulp.task('serve', function() {
-  nodemon({script: 'server.js', ignore: 'node_modules/**/*.js'});
+  nodemon({script: 'server/server.js', ignore: 'node_modules/**/*.js'});
 });
 
 gulp.task('default', ['start']);
