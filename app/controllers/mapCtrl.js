@@ -26,12 +26,12 @@
 
     // D3 =========================
     // we define d3 us-map here
-    var width = 1280,
-        height = 800,
+    var width = 1200,
+        height = 580,
         active = d3.select(null);
 
     var projection = d3.geo.albersUsa()
-        .scale(1600)
+        .scale(1280)
         .translate([width / 2, height / 2]);
 
     var path = d3.geo.path()
@@ -66,26 +66,42 @@
     });
 
     function clicked(d) {
+
+      $('form').fadeIn();
+      $('button').on('click', function(){
+        $('form').fadeOut();
+        fetchGeoData();
+      });
+      
       if (active.node() === this) return reset();
       // ========= The link between the client and the server ===============
-      d3.json('/geo.json', function(err, data) {
-        var geoLocation = (data[d.id].geo);
-        console.log(geoLocation);
-        // sending data (geo location and the end user search criteria) to server
-        // a post request with data to twitter
-        $http.post('/map', {geo: geoLocation, subject: $scope.search.val })
-           .success(function(data){
-            graphIt(data);
-            // no enough data found!
-            if (data.hasOwnProperty("error")) {
-              console.log(data["error"]);
-            } else {
-              // on success, the `data` is the data from Watson
-              // the data is the big 5 for a collection of tweets
-              console.log(data);
-            }
-           });
-      });
+      var fetchGeoData =  function() {
+
+        d3.json('/geo.json', function(err, data) {
+          // activate the loading icon
+          $('.spinner').show();
+          $('svg').css('opacity', '0.2');
+          var geoLocation = (data[d.id].geo);
+          console.log(geoLocation);
+          //sending data (geo location and the end user search criteria) to server
+          //a post request with data to twitter
+          $http.post('/map', {geo: geoLocation, subject: $scope.search.val })
+             .success(function(data){
+              // disable the loading icon
+              $('.spinner').hide();
+              // in case no enough data found raise an error
+              if (data.hasOwnProperty("error")) {
+                console.log(data["error"]);
+                sweetAlert({ title: "Watson says:",   text: "Oh, dear. It looks like there aren't enough tweets to conduct an analysis. Kindly send me another search query." });
+              } else {
+                // on success, the `data` is the data from Watson
+                // the data is the big 5 for a collection of tweets
+                graphIt(data);
+                $('.output').fadeIn();
+              }
+             });
+        });
+    }
       
       active.classed("active", false);
       active = d3.select(this).classed("active", true);
