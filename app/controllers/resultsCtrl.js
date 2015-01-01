@@ -87,7 +87,7 @@ var graphIt = function (watsonData){
 
   $('#a5').animate({
     // Neuroticism to be checked with phil
-      marginLeft: watsonData.USdata[54].value.replace(/\D/g, '') * 10,
+      marginLeft: watsonData.USdata[29].value.replace(/\D/g, '') * 10,
     }, 1000, function() {
   });
 
@@ -113,7 +113,7 @@ var graphIt = function (watsonData){
 
   $('#b5').animate({
     // Neuroticism to be checked with phil
-      marginLeft: watsonData.stateData[54].value.replace(/\D/g, '') * 10,
+      marginLeft: watsonData.stateData[29].value.replace(/\D/g, '') * 10,
     }, 1000, function() {
   });
 
