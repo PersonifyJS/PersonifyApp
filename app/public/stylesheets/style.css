@@ -7,6 +7,13 @@ form {
   margin-left: 400px;
   display: none;
 }
+
+.btn {
+  height: 50px !important;
+  margin-top: -12px !important;
+  margin-left: -4px !important;
+  border-radius: 0 !important;
+}
 form input {
   width: 300px;
   height: 50px;
@@ -109,7 +116,7 @@ form input {
 .background {
   fill: none;
   pointer-events: all;
-  margin-left: 40%;
+  margin-left: 70%;
 }
 
 .feature {
