@@ -1,18 +1,7 @@
 (function(){
-  var app = angular.module('App', ['ui.router']);
-
-  app.config(function($stateProvider, $urlRouterProvider) {
-   
-    $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'partial-home.html'
-      });
-      $urlRouterProvider.otherwise('/');
-  });
-
-  app.controller('MapCtrl', ['$scope', '$http', function ($scope, $http) {
-    
+  
+  angular.module('controllers', []).controller('MapCtrl', ['$scope', '$http', function ($scope, $http) {
+      
     var _val = "#ferguson";
 
     $scope.search = {
