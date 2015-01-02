@@ -1,10 +1,7 @@
 // d3 Results Graph
 
-// set the container
-// var width = 500,
-//     height = 500;
-// var traitsArray = [];
 
+// Watson Big5
 // 0 Object {id: "Big 5", title: true, value: ""}
 // mapCtrl.js:85 1 Object {id: "Openness", title: true, value: "86%"}
 // mapCtrl.js:85 2 Object {id: "Adventurousness", title: false, value: "78%"}
