@@ -2,20 +2,19 @@
   
   angular.module('controllers', []).controller('MapCtrl', ['$scope', '$http', function ($scope, $http) {
       
-    var _val = "#ferguson";
-
-    $scope.search = {
-      val: function(newSubject){
-        if(angular.isDefined(newSubject)) {
-          _val = newSubject;
-        }
-        return _val;
-      }
-    };
+    // var val = '#ferguson';
+    // $scope.search = {
+    //   val: function(newSubject){
+    //     if(angular.isDefined(newSubject)) {
+    //       val = newSubject;
+    //     }
+    //     return val;
+    //   }
+    // };
 
     // D3 =========================
     // we define d3 us-map here
-    var width = 1200,
+    var width = 1300,
         height = 580,
         active = d3.select(null);
 
@@ -25,7 +24,6 @@
 
     var path = d3.geo.path()
         .projection(projection);
-    //var board = document.getElementById('us-map');
     var svg = d3.select('body').append("svg")
         .attr("width", width)
         .attr("height", height);
@@ -62,7 +60,12 @@
         fetchGeoData();
       });
       
-      if (active.node() === this) return reset();
+      if (active.node() === this) {
+        $('svg').css('opacity', '1');
+        $('.output').hide();
+        $('form').hide();
+        return reset();
+      }
       // ========= The link between the client and the server ===============
 
       var fetchGeoData =  function() {
