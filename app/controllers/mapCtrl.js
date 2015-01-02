@@ -75,6 +75,7 @@
       
       if (active.node() === this) return reset();
       // ========= The link between the client and the server ===============
+
       var fetchGeoData =  function() {
 
         d3.json('/geo.json', function(err, data) {
@@ -102,6 +103,27 @@
              });
         });
     }
+// =======
+//       d3.json('/geo.json', function(err, data) {
+//         var geoLocation = (data[d.id].geo);
+//         console.log(geoLocation);
+//        // graphIt({"openess": 90, "value": 50, "outgoing": 10, "funny":60});
+//         // sending data (geo location and the end user search criteria) to server
+//         // a post request with data to twitter
+//         $http.post('/map', {geo: geoLocation, subject: $scope.search.val })
+//            .success(function(data){
+//             graphIt(data);
+//             // no enough data found!
+//             if (data.hasOwnProperty("error")) {
+//               console.log(data["error"]);
+//             } else {
+//               // on success, the `data` is the data from Watson
+//               // the data is the big 5 for a collection of tweets
+//               console.log(data);
+//             }
+//            });
+//        });
+// >>>>>>> Stashed changes
       
       active.classed("active", false);
       active = d3.select(this).classed("active", true);

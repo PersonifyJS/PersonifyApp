@@ -61,6 +61,7 @@
 // mapCtrl.js:85 53 Object {id: "Self-enhancement", title: false, value: "69%"}
 // mapCtrl.js:85 54 Object {id: "Self-transcendence", title: false, value: "94%"}
 
+
 var graphIt = function (watsonData){
   
   $('.us, .state').show();
@@ -116,5 +117,48 @@ var graphIt = function (watsonData){
       marginLeft: watsonData.stateData[29].value.replace(/\D/g, '') * 10,
     }, 1000, function() {
   });
+// =======
+//   for (var key in data) {
+//     traitsArray.push(data[key]);
+//   }
 
+//   var widthScale = d3.scale.linear()
+//                   .domain([0, 100])
+//                   .range([0, width]);
+
+//   var color = d3.scale.linear()
+//               .domain([0,100])
+//               .range(["red", "blue"]);
+
+//   var container = document.getElementById('resultsContainer');
+//   var resultsBoard = d3.select(container)
+//                           .append('svg')
+//                           .attr("width", width)
+//                           .attr("height", height)
+//                           .append("g")
+//                           .attr("transform", "translate(50,50)");
+
+// //Grabs the stateData array from traitsArray (1th index)
+// //slices off the first val because there's no 'value' key
+//   var tempObj = [];
+//   var stateData = traitsArray[1].slice(1);
+
+// //loop through stateData array and convert percentages (type string) to numbers
+//   for( var j=0;j<stateData.length;j++){
+//     if(stateData[j]['value'].indexOf('%') > -1)
+//     tempObj.push(parseInt(stateData[j]['value']));
+//   }
+
+
+//   var traits = resultsBoard.selectAll("rect")
+//                   .data(tempObj)
+//                   .enter()
+//                       .append("rect")
+//                       .attr("width", function(d){ return widthScale(d); })
+//                       .attr("height", 5 )
+//                       .attr("fill", function(d){ return color(d); })
+//                       .attr("y", function(d, i){ return i * 10; })
+//                       //.text(function(d) { return d; });  
+    
 }
+
