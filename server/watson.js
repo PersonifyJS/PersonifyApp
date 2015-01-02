@@ -8,7 +8,6 @@ var flatten = require('../app/util/flatten');
 
 var appInfo = JSON.parse(process.env.VCAP_APPLICATION || "{}");
 
-
 // defaults for dev outside bluemix
 var service_url = "https://gateway.watsonplatform.net/systemu/service/";
 var service_username = "12312a68-fdff-4064-9928-eb088a960815";
