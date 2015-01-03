@@ -10,19 +10,17 @@ form {
 }
 
 .right {
-  float: left;
   font-weight: normal;
+  margin-left: 560px;
+  margin-top: -50px;
   font-size: 1.2em;
-  margin-top: -30px;
-  margin-left: 820px;
   color: #34495e;
   font-family: 'Open Sans', sans-serif;
 }
 
 .left {
-  float: right;
-  margin-right: 1050px;
-  margin-top: -10px;
+  margin-left: -200px;
+  margin-top: 50px;
   font-weight: normal;
   font-size: 1.2em;
   color: #34495e;
@@ -45,9 +43,9 @@ form input {
   width: 80%;
   position: absolute;
   margin-top: 100px;
-  margin-left: 150px;
+  margin-left: 180px;
   z-index: 10;
-  /*display: none;*/
+  display: none;
 }
 
 .graph {
