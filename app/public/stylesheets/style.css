@@ -1,11 +1,32 @@
 /*output css
 =========*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,300,600,400);
 
 form {
   margin-top: 250px;
   position: absolute;
   margin-left: 400px;
   display: none;
+}
+
+.right {
+  float: left;
+  font-weight: normal;
+  font-size: 1.2em;
+  margin-top: -30px;
+  margin-left: 820px;
+  color: #34495e;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.left {
+  float: right;
+  margin-right: 1050px;
+  margin-top: -10px;
+  font-weight: normal;
+  font-size: 1.2em;
+  color: #34495e;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .btn {
@@ -21,29 +42,31 @@ form input {
 }
 
 .output {
-  width: 90%;
+  width: 80%;
   position: absolute;
   margin-top: 100px;
-  display: none;
+  margin-left: 150px;
+  z-index: 10;
+  /*display: none;*/
 }
 
 .graph {
-  width: 1000px;
-  background-color: #6C7A89;
+  width: 800px;
+  background-color: #2C3E50;
   height: 1px;
   margin-bottom: 50px;
 }
 
 .output .circle {
-  width: 20px;
-  height: 20px;
+  width: 27px;
+  height: 27px;
   border-radius: 25px;
   position: absolute;
-  margin-top: -60px;
+  margin-top: -65px;
 }
 
 .us{
-  background-color: #4183D7;
+  background-color: #bdc3c7;
   display: none;
 }
 
@@ -79,6 +102,7 @@ form input {
   top: 0;
   background-color: #4183D7;
   border-radius: 100%;
+  z-index: 10;
   
   -webkit-animation: bounce 2.0s infinite ease-in-out;
   animation: bounce 2.0s infinite ease-in-out;

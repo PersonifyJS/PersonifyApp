@@ -2,15 +2,16 @@
   
   angular.module('controllers', []).controller('MapCtrl', ['$scope', '$http', function ($scope, $http) {
       
-    // var val = '#ferguson';
-    // $scope.search = {
-    //   val: function(newSubject){
-    //     if(angular.isDefined(newSubject)) {
-    //       val = newSubject;
-    //     }
-    //     return val;
-    //   }
-    // };
+    var _val = '';
+
+    $scope.search = {
+      val: function(newSubject){
+        if(angular.isDefined(newSubject)) {
+          _val = newSubject;
+        }
+        return _val;
+      }
+    }
 
     // D3 =========================
     // we define d3 us-map here
@@ -60,12 +61,7 @@
         fetchGeoData();
       });
       
-      if (active.node() === this) {
-        $('svg').css('opacity', '1');
-        $('.output').hide();
-        $('form').hide();
-        return reset();
-      }
+      if (active.node() === this) return reset();
       // ========= The link between the client and the server ===============
 
       var fetchGeoData =  function() {
@@ -86,6 +82,7 @@
               if (data.hasOwnProperty("error")) {
                 console.log(data["error"]);
                 sweetAlert({ title: "Watson says:",   text: "Oh, dear. It looks like there aren't enough tweets to conduct an analysis. Kindly send me another search query." });
+                return;
               } else {
                 // on success, the `data` is the data from Watson
                 // the data is the big 5 for a collection of tweets
@@ -135,9 +132,11 @@
     }
 
     function reset() {
+      $('form').hide();
+      $('.output').fadeOut();
+      $('svg').css('opacity', '1');
       active.classed("active", false);
       active = d3.select(null);
-
       g.transition()
           .duration(750)
           .style("stroke-width", "1.5px")
