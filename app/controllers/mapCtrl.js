@@ -65,7 +65,7 @@
       // ========= The link between the client and the server ===============
 
       var fetchGeoData =  function() {
-
+//
         d3.json('/geo.json', function(err, data) {
           // activate the loading icon
           $('.spinner').show();
@@ -86,6 +86,7 @@
               } else {
                 // on success, the `data` is the data from Watson
                 // the data is the big 5 for a collection of tweets
+                //debugger
                 graphIt(data);
                 $('.output').fadeIn();
               }
