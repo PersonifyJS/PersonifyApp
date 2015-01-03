@@ -73,12 +73,13 @@ module.exports.watson =  function(data, res, called) {
         if (error) res.render('index',{'error': error.message});
         else {
           //Here we get the results from Watson and send it back to the client
-          //console.log(flat_traits);
+          //console.log(flat_traits); 
           if (called) {
             flatTraitsArray.USdata = flat_traits;
           } else {
             flatTraitsArray.stateData = flat_traits;
             res.send(flatTraitsArray);
+            
           }
         }
       });
