@@ -56,7 +56,7 @@
     function clicked(d) {
 
       $('form').fadeIn();
-      $('button').on('click', function(){
+      $('.submit').on('click', function(){
         $('form').fadeOut();
         fetchGeoData();
       });
@@ -81,8 +81,7 @@
               // in case no enough data found raise an error
               if (data.hasOwnProperty("error") || data.USdata === null ||  data.stateData === null) {
                 console.log(data["error"]);
-                //sweetAlert({ title: "Watson says:",   text: "Oh, dear. It looks like there aren't enough tweets to conduct an analysis. Kindly send me another search query." });
-                alert('Oh, dear. It looks like there aren\'t enough tweets to conduct an analysis. Kindly send me another search query.')
+                sweetAlert({ title: "Watson says:",   text: "Oh, dear. It looks like there aren't enough tweets to conduct an analysis. Kindly send me another search query." });
                 reset();
               } else {
                 // on success, the `data` is the data from Watson

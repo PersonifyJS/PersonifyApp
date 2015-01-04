@@ -9,58 +9,44 @@ form {
   display: none;
 }
 
-.right {
-  font-weight: normal;
-  margin-left: 560px;
-  margin-top: -50px;
-  font-size: 1.2em;
-  color: #34495e;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.left {
-  margin-left: -200px;
-  margin-top: 50px;
-  font-weight: normal;
-  font-size: 1.2em;
-  color: #34495e;
-  font-family: 'Open Sans', sans-serif;
-}
-
 .btn {
   height: 50px !important;
   margin-top: -12px !important;
   margin-left: -4px !important;
   border-radius: 0 !important;
 }
+
 form input {
   width: 300px;
   height: 50px;
   font-size: 2em;
 }
 
+.measuring-bar {
+  width: 100%;
+  height: 1.2rem;
+  border-bottom: 1px solid #404041;
+  position: relative;
+}
+
 .output {
-  width: 80%;
+  width: 70%;
   position: absolute;
-  margin-top: 100px;
-  margin-left: 180px;
+  margin-top: 150px;
+  margin-left: 100px;
   z-index: 10;
+  font: 16px 'Open Sans';
+  color: #2c3e50;
   display: none;
 }
 
-.graph {
-  width: 800px;
-  background-color: #2C3E50;
-  height: 1px;
-  margin-bottom: 50px;
-}
 
 .output .circle {
-  width: 27px;
-  height: 27px;
+  width: 20px;
+  height: 20px;
   border-radius: 25px;
   position: absolute;
-  margin-top: -65px;
+  margin-top: 1.5px;
 }
 
 .us{
