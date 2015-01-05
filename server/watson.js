@@ -16,7 +16,6 @@ var service_password = "KUwy0neR5kpV";
 // Object to be sent to the client 
 var flatTraitsArray = {USdata: null, stateData: null};
 
-
 if (process.env.VCAP_SERVICES) {
   console.log('Parsing VCAP_SERVICES');
   var services = JSON.parse(process.env.VCAP_SERVICES);

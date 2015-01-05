@@ -2,8 +2,7 @@
 
 
 // Watson Big5
-// 0 Object {id: "Big 5", title: true, value: ""}
-// mapCtrl.js:85 1 Object {id: "Openness", title: true, value: "86%"}
+// 0 Object {id: "Big 5", title: true, val5 1 Object {id: "Openness", title: true, value: "86%"}
 // mapCtrl.js:85 2 Object {id: "Adventurousness", title: false, value: "78%"}
 // mapCtrl.js:85 3 Object {id: "Artistic interests", title: false, value: "4%"}
 // mapCtrl.js:85 4 Object {id: "Emotionality", title: false, value: "12%"}
@@ -64,54 +63,54 @@ var graphIt = function (watsonData){
   $('.us, .state').show();
 
   $('#a1').animate({
-      marginLeft: watsonData.USdata[1].value.replace(/\D/g, '') * 8,
+      marginLeft: watsonData.USdata[1].value,
     }, 1000, function() {
   });
 
   $('#a2').animate({
-      marginLeft: watsonData.USdata[8].value.replace(/\D/g, '') * 8,
+      marginLeft: watsonData.USdata[8].value,
     }, 1000, function() {
   });
 
   $('#a3').animate({
-      marginLeft: watsonData.USdata[15].value.replace(/\D/g, '') * 8,
+      marginLeft: watsonData.USdata[15].value,
     }, 1000, function() {
   });
 
   $('#a4').animate({
-      marginLeft: watsonData.USdata[22].value.replace(/\D/g, '') * 8,
+      marginLeft: watsonData.USdata[22].value,
     }, 1000, function() {
   });
 
   $('#a5').animate({
     // Neuroticism to be checked with phil
-      marginLeft: watsonData.USdata[29].value.replace(/\D/g, '') * 8,
+      marginLeft: watsonData.USdata[29].value,
     }, 1000, function() {
   });
 
   $('#b1').animate({
-      marginLeft: watsonData.stateData[1].value.replace(/\D/g, '') * 8,
+      marginLeft: watsonData.stateData[1].value,
     }, 1000, function() {
   });
 
   $('#b2').animate({
-      marginLeft: watsonData.stateData[8].value.replace(/\D/g, '') * 8,
+      marginLeft: watsonData.stateData[8].value,
     }, 1000, function() {
   });
 
   $('#b3').animate({
-      marginLeft: watsonData.stateData[15].value.replace(/\D/g, '') * 8,
+      marginLeft: watsonData.stateData[15].value,
     }, 1000, function() {
   });
 
   $('#b4').animate({
-      marginLeft: watsonData.stateData[22].value.replace(/\D/g, '') * 8,
+      marginLeft: watsonData.stateData[22].value,
     }, 1000, function() {
   });
 
   $('#b5').animate({
     // Neuroticism to be checked with phil
-      marginLeft: watsonData.stateData[29].value.replace(/\D/g, '') * 8,
+      marginLeft: watsonData.stateData[29].value,
     }, 1000, function() {
   });
 // =======
