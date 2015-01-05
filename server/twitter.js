@@ -22,7 +22,6 @@ module.exports.twitterData = function(req, res) {
       T.get('search/tweets', { q: ''+req.body.subject+' since:2014-10-01', 
                                count: 5000, geocode: req.body.geo, lang: 'en' },
                                function(err, data, response) {
-        console.log(data.statuses.length)
         for(var i = 0; i < data.statuses.length; i++) {
           // accumulate the data (each tweet as a text) received from twitter
           dataFromTwitterPerState += data.statuses[i].text;
@@ -39,7 +38,7 @@ module.exports.twitterData = function(req, res) {
       T.get('search/tweets', { q: ''+req.body.subject+' since:2014-10-01', 
                                count: 5000, geocode: geoUS , lang: 'en' },
                                function(err, data, response) {
-
+        
         for(var i = 0; i < data.statuses.length; i++) {
           // accumulate the data (each tweet as a text) received from twitter
           dataFromTwitterUS += data.statuses[i].text;

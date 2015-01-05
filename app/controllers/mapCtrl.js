@@ -2,16 +2,7 @@
   
   angular.module('controllers', []).controller('MapCtrl', ['$scope', '$http', function ($scope, $http) {
       
-    var _val = '';
-
-    $scope.search = {
-      val: function(newSubject){
-        if(angular.isDefined(newSubject)) {
-          _val = newSubject;
-        }
-        return _val;
-      }
-    }
+    $scope.val = "#nike";
 
     // D3 =========================
     // we define d3 us-map here
@@ -54,18 +45,20 @@
     });
 
     function clicked(d) {
-
-      $('form').fadeIn();
-      $('.submit').on('click', function(){
-        $('form').fadeOut();
-        fetchGeoData();
-      });
-      
       if (active.node() === this) return reset();
-      // ========= The link between the client and the server ===============
 
-      var fetchGeoData =  function() {
-//
+      var showForm = function() {
+        $('form').fadeIn();
+              $('.submit').on('click', function(){
+                $('form').fadeOut();
+                fetchGeoData();
+              });
+      }
+      showForm(); 
+
+
+      function fetchGeoData() {
+
         d3.json('/geo.json', function(err, data) {
           // activate the loading icon
           $('.spinner').show();
@@ -74,12 +67,12 @@
           console.log(geoLocation);
           //sending data (geo location and the end user search criteria) to server
           //a post request with data to twitter
-          $http.post('/map', {geo: geoLocation, subject: $scope.search.val })
+          $http.post('/map', {geo: geoLocation, subject: $scope.val })
              .success(function(data){
               // disable the loading icon
               $('.spinner').hide();
               // in case no enough data found raise an error
-              if (data.hasOwnProperty("error") || data.USdata === null ||  data.stateData === null) {
+              if (data.hasOwnProperty("error")) {
                 console.log(data["error"]);
                 sweetAlert({ title: "Watson says:",   text: "Oh, dear. It looks like there aren't enough tweets to conduct an analysis. Kindly send me another search query." });
                 reset();
@@ -91,7 +84,7 @@
                 $('.output').fadeIn();
               }
              });
-        });
+        });   
     }
 // =======
 //       d3.json('/geo.json', function(err, data) {
