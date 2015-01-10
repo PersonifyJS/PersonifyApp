@@ -4,7 +4,7 @@
       
     $scope.val = "#nike";
 
-    sweetAlert({   title: "Welcome!",   text: "Please click on a state to start."});
+    sweetAlert({ title: "Welcome!",   text: "Please click on a state to get started."});
 
     // D3 =========================
     // we define d3 us-map here
