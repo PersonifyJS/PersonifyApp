@@ -230,7 +230,6 @@ form input {
   fill: none;
   pointer-events: all;
   margin-left: 70%;
-  margin-top: -10px;
 }
 
 .feature {
@@ -255,7 +254,7 @@ form input {
 
 svg {
   font: 14px 'Open Sans';
-  margin-top: -20px;
+  margin-top: 0px;
   margin-bottom: 0px;
 }
 
