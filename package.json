@@ -15,6 +15,9 @@
   "engines": {
     "node": "0.10.x"
   },
+  "scripts": {
+  "start": "gulp"
+  },
   "homepage": "",
   "dependencies": {
     "bluebird": "^2.4.2",
