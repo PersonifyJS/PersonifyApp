@@ -8,6 +8,10 @@
       .state('home', {
         url: '/',
         templateUrl: 'partial-home.html'
+      })
+      .state('app', {
+        url: '/app',
+        templateUrl: 'partial-app.html'
       });
       $urlRouterProvider.otherwise('/');
   });

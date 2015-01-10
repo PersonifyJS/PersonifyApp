@@ -4,10 +4,12 @@
       
     $scope.val = "#nike";
 
+    sweetAlert({   title: "Welcome!",   text: "Please click on a state to start."});
+
     // D3 =========================
     // we define d3 us-map here
-    var width = 1300,
-        height = 580,
+    var width = 1280,
+        height = 600,
         active = d3.select(null);
 
     var projection = d3.geo.albersUsa()
@@ -43,20 +45,22 @@
           .attr("class", "mesh")
           .attr("d", path);
     });
+    $scope.hashTag = $scope.val;
 
     function clicked(d) {
-
-      $('form').fadeIn();
-      $('button').on('click', function(){
-        $('form').fadeOut();
-        fetchGeoData();
-      });
       
-      if (active.node() === this) return reset();
+      if (active.node() === this){
+        return reset();
+      } else {
+        $('form').fadeIn();
+        $('.submit').on('click', function(){
+          $('form').fadeOut();
+          fetchGeoData();
+        });
+      }
       // ========= The link between the client and the server ===============
-
-      var fetchGeoData =  function() {
-
+      
+      function fetchGeoData() {
         d3.json('/geo.json', function(err, data) {
           // activate the loading icon
           $('.spinner').show();
@@ -73,13 +77,18 @@
               if (data.hasOwnProperty("error")) {
                 console.log(data["error"]);
                 sweetAlert({ title: "Watson says:",   text: "Oh, dear. It looks like there aren't enough tweets to conduct an analysis. Kindly send me another search query." });
-                return;
+                reset();
               } else {
+                $scope.hashTag = $scope.val;
                 // on success, the `data` is the data from Watson
                 // the data is the big 5 for a collection of tweets
-                //debugger
                 graphIt(data);
                 $('.output').fadeIn();
+                $('#another').fadeIn();
+
+                $('#another').on('click', function(){
+                  reset();
+                });
               }
              });
         });
@@ -109,11 +118,9 @@
       active.classed("active", false);
       active = d3.select(null);
       g.transition()
-          .duration(750)
+          .duration(550)
           .style("stroke-width", "1.5px")
           .attr("transform", "");
     }
-    // ========= end of D3 US-map ======================
-
   }]);
 })();
