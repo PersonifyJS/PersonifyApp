@@ -19,7 +19,7 @@ module.exports.twitterData = function(req, res) {
     var analyzeState = function () {
       dataFromTwitterPerState = "";
       console.log('analyzeState')
-      T.get('search/tweets', { q: ''+req.body.subject+' since:2014-10-01', 
+      T.get('search/tweets', { q: ''+req.body.subject+' since:2014-01-01', 
                                count: 5000, geocode: req.body.geo, lang: 'en' },
                                function(err, data, response) {
         for(var i = 0; i < data.statuses.length; i++) {
@@ -35,7 +35,7 @@ module.exports.twitterData = function(req, res) {
       console.log('analyzeNation')
       // geoUS: the geo location of United States
       var geoUS = ['39.8','-95.583068847656','2500km']
-      T.get('search/tweets', { q: ''+req.body.subject+' since:2014-10-01', 
+      T.get('search/tweets', { q: ''+req.body.subject+' since:2014-01-01', 
                                count: 5000, geocode: geoUS , lang: 'en' },
                                function(err, data, response) {
         
