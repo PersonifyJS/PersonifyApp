@@ -9,6 +9,9 @@ form {
   display: none;
 }
 
+.partial-home svg{
+  display: none;
+}
 .sweet-alert {
   background-color: #2c3e50 !important;
   color: white !important;
@@ -29,6 +32,7 @@ form {
 
 .sweet-alert h2, .sweet-alert p {
   color: #ecf0f1 !important;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .sweet-alert button {
@@ -46,15 +50,17 @@ form {
 
 .btn {
   height: 50px !important;
-  margin-top: -12px !important;
+  margin-top: -17px !important;
   margin-left: -4px !important;
   border-radius: 0 !important;
+  font-family: 'Open Sans', sans-serif;
 }
 
 form input {
   width: 300px;
   height: 50px;
   font-size: 2em;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .measuring-bar {
@@ -78,9 +84,17 @@ form input {
 .credit {
   position: absolute;
   margin-top: 550px;
-  right: 10px;
+  right: 30px;
   font-weight: thin;
+  font: 15px 'Open Sans';
+}
 
+.credit a {
+  color: #2c3e50;
+}
+
+.credit a:hover {
+  color: #2c3e50
 }
 
 #another {
@@ -90,6 +104,12 @@ form input {
 .navbar-default {
   background-color: #2c3e50 !important;
   border-color: #080808 !important;
+}
+
+#nav-right {
+  position: absolute;
+  width: 210px;
+  margin-left: 650px;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -256,6 +276,7 @@ svg {
   font: 14px 'Open Sans';
   margin-top: 0px;
   margin-bottom: 0px;
+  margin-left: -80px;
 }
 
 .axis path,
