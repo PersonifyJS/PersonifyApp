@@ -16,7 +16,7 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "start": "server/server.js"
+    "start": "gulp"
   },
   "homepage": "",
   "dependencies": {
