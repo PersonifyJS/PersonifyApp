@@ -131,6 +131,16 @@ form input {
   width: 100%;
 }
 
+.screenshots  {
+  color: white !important;
+  list-style: none;
+}
+
+.screenshots a:hover {
+  color: black !important;
+  list-style: none !important;
+}
+
 .navbar-default .navbar-nav > li > a {
   color: #ecf0f1;
   font-size: 1.2em;
@@ -367,3 +377,10 @@ svg {
 .marker text {
   text-anchor: middle;
 }
+
+@media (max-width: 1200px) {
+  #showcase img {
+    width: 90%;
+  }
+}
+

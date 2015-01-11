@@ -14,6 +14,8 @@
         </div>
       </div> <!--/ .container -->
       <div>
+        <br><br><br><br>
+        <h3><a class="screenshots col-lg-12 row centered" href="#">ScreenShots</a></h3>
       </div>
   </div><!--/ #headerwrap -->
 <div id="shots">
@@ -65,3 +67,10 @@
       <hr>
       </div> <!--/ .container -->
   </div><!--/ #introwrap -->
+
+  <script>
+    $('.screenshots').on('click', function(e){
+      e.preventDefault();
+      $("html, body").animate({ scrollTop: "950px", duration: 500 });
+    });
+  </script>
