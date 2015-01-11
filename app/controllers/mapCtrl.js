@@ -46,6 +46,7 @@
             .attr("d", path);
       });
       $scope.hashTag = $scope.val;
+      var geoLocation;
 
       function clicked(d) {
         
@@ -59,13 +60,13 @@
           });
         }
         // ========= The link between the client and the server ===============
-        
         function fetchGeoData() {
+          console.log('Called')
           d3.json('/geo.json', function(err, data) {
             // activate the loading icon
             $('.spinner').show();
             $('svg').css('opacity', '0.2');
-            var geoLocation = (data[d.id].geo);
+            geoLocation = (data[d.id].geo);
             console.log(geoLocation);
             //sending data (geo location and the end user search criteria) to server
             //a post request with data to twitter
@@ -112,6 +113,7 @@
       }
 
       function reset() {
+        geoLocation = "";
         $('form').hide();
         $('.output').fadeOut();
         $('svg').css('opacity', '1');

@@ -2,6 +2,10 @@
 =========*/
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700,300,600,400);
 
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 form {
   margin-top: 250px;
   position: absolute;
@@ -46,6 +50,10 @@ form {
   padding: 10px 32px;
   margin: 26px 5px 0 5px;
   cursor: pointer;
+}
+
+.theApp a:active {
+  color: #ecf0f1 !important;
 }
 
 .btn {
@@ -93,8 +101,21 @@ form input {
   color: #2c3e50;
 }
 
+.watson {
+  line-height: 25px;
+}
+
+.intro {
+  width: 90%;
+  margin-left: 50px;
+}
+
 .credit a:hover {
   color: #2c3e50
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white !important;
 }
 
 #another {
@@ -106,10 +127,18 @@ form input {
   border-color: #080808 !important;
 }
 
-#nav-right {
-  position: absolute;
-  width: 210px;
-  margin-left: 650px;
+#nav-right li{
+  width: 100%;
+}
+
+.screenshots  {
+  color: white !important;
+  list-style: none;
+}
+
+.screenshots a:hover {
+  color: black !important;
+  list-style: none !important;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -127,7 +156,6 @@ form input {
 .navbar-default .navbar-nav > li > a:hover {
   background-color: #27ae60;
 }
-
 
 .navbar-default .navbar-brand {
   color: #ecf0f1 !important;
@@ -348,4 +376,10 @@ svg {
 
 .marker text {
   text-anchor: middle;
+}
+
+@media (max-width: 1200px) {
+  #showcase img {
+    width: 90%;
+  }
 }
