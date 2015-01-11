@@ -10,8 +10,8 @@ var appInfo = JSON.parse(process.env.VCAP_APPLICATION || "{}");
 
 // defaults for dev outside bluemix
 var service_url = "https://gateway.watsonplatform.net/systemu/service/";
-var service_username = "12312a68-fdff-4064-9928-eb088a960815";
-var service_password = "KUwy0neR5kpV";
+var service_username = "1c3eadc8-e5bc-4317-bf02-b32178b288ac";
+var service_password = "dm6pKfaMFeWa";
 
 // Object to be sent to the client 
 var flatTraitsArray = {USdata: null, stateData: null};
