@@ -1,4 +1,4 @@
-# PersonifyApp
+PersonifyApp
 ==============
 > A sample application built on [PersonifyJS](https://github.com/PersonifyJS/personify.js), a JavaScript based library that allows easy access to IBM Watson features utilizing Twitter data.
 
