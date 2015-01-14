@@ -76,7 +76,7 @@
                 // in case no enough data found raise an error
                 if (data.hasOwnProperty("error")) {
                   console.log(data["error"]);
-                  sweetAlert({ title: "Watson says:",   text: "Oh, dear. It looks like there aren't enough tweets to conduct an analysis. Kindly send me another search query." });
+                  sweetAlert({ title: "Watson says:",   text: "Oh, dear. It looks like there aren't enough tweets to conduct an analysis. Please choose another state." });
                   reset();
                 } else {
                   $scope.hashTag = $scope.val;
