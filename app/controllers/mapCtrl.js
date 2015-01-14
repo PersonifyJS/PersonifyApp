@@ -4,7 +4,7 @@
       
     $scope.val = "#nike";
 
-    sweetAlert({ title: "Welcome!",   text: "Please click on a state to get started."});
+    sweetAlert({ title: "Welcome!",   text: "Submit a topic to get started."});
 
     // D3 =========================
     // we define d3 us-map here
@@ -48,20 +48,18 @@
       $scope.hashTag = $scope.val;
       var geoLocation;
 
+      $('form').fadeIn();
+      $('.submit').on('click', function(){
+          $('form').fadeOut();
+          sweetAlert({ title: "Great!",   text: "Now choose a state to run the analysis."});
+      });
+
       function clicked(d) {
         
-        if (active.node() === this){
-          return reset();
-        } else {
-          $('form').fadeIn();
-          $('.submit').on('click', function(){
-            $('form').fadeOut();
-            fetchGeoData();
-          });
-        }
+        if (active.node() === this) return reset();
+ 
+        $('form').fadeOut();
         // ========= The link between the client and the server ===============
-        function fetchGeoData() {
-          console.log('Called')
           d3.json('/geo.json', function(err, data) {
             // activate the loading icon
             $('.spinner').show();
@@ -75,10 +73,10 @@
                 // disable the loading icon
                 $('.spinner').hide();
                 // in case no enough data found raise an error
-                if (data.hasOwnProperty("error")) {
-                  console.log(data["error"]);
+                if (data.Error1 || data.Error2) {
                   sweetAlert({ title: "Watson says:",   text: "Oh, dear. It looks like there aren't enough tweets to conduct an analysis. Kindly send me another search query." });
                   reset();
+                  $('form').fadeIn();
                 } else {
                   $scope.hashTag = $scope.val;
                   // on success, the `data` is the data from Watson
@@ -87,13 +85,16 @@
                   $('.output').fadeIn();
                   $('#another').fadeIn();
 
-                  $('#another').on('click', function(){
+                  $('#anotherTopic').on('click', function(){
+                    reset();
+                    $('form').fadeIn();
+                  });
+                  $('#anotherState').on('click', function(){
                     reset();
                   });
                 }
                });
           });
-      }
 
         active.classed("active", false);
         active = d3.select(this).classed("active", true);
@@ -114,7 +115,6 @@
 
       function reset() {
         geoLocation = "";
-        $('form').hide();
         $('.output').fadeOut();
         $('svg').css('opacity', '1');
         active.classed("active", false);
