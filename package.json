@@ -1,16 +1,16 @@
 {
-  "name": "",
+  "name": "PersonifyApp",
   "version": "1.0.0",
-  "description": "",
+  "description": "A sample application built on Personify.js library.",
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/PersonifyJS/PersonifyApp"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Essam Al Joubori, Phil Elauria, Rohan Agrawal",
+  "license": "MIT",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/PersonifyJS/PersonifyApp/issues"
   },
   "engines": {
     "node": "0.10.x"
@@ -18,9 +18,9 @@
   "scripts": {
     "start": "node server/server.js"
   },
-  "homepage": "",
+  "homepage": "http://personify.mybluemix.net",
   "dependencies": {
-    "bluebird": "^2.4.2",
+    "bluebird": "^2.6.4",
     "body-parser": "^1.10.0",
     "browser-sync": "^1.8.2",
     "cookie-parser": "^1.3.3",
@@ -35,6 +35,7 @@
     "karma-nyan-reporter": "0.0.50",
     "method-override": "^2.3.0",
     "morgan": "^1.5.0",
+    "promise": "^6.0.1",
     "request": "^2.51.0",
     "serve-favicon": "^2.1.7",
     "twit": "^1.1.18"
