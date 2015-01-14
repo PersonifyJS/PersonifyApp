@@ -97,12 +97,32 @@ form input {
   font: 15px 'Open Sans';
 }
 
+.names {
+  color: #555;
+}
+
+.big-five {
+  color: #ecf0f1;
+}
+
 .credit a {
   color: #2c3e50;
 }
 
+.landText {
+  text-align: left;
+}
+
+.meet-team {
+  color: #555;
+}
+
+li {
+    color: white; /* or whatever color you prefer */
+}
+
 .watson {
-  line-height: 25px;
+  line-height: 35px;
 }
 
 .intro {
