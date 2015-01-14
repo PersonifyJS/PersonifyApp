@@ -81,7 +81,7 @@ form input {
 .output {
   width: 70%;
   position: absolute;
-  margin-top: 150px;
+  margin-top: 100px;
   margin-left: 100px;
   z-index: 10;
   font: 16px 'Open Sans';
@@ -127,8 +127,10 @@ form input {
   border-color: #080808 !important;
 }
 
-#nav-right li{
-  width: 100%;
+#nav-right {
+  width: 210px;
+  position: absolute;
+  margin-left: 650px;
 }
 
 .screenshots  {
@@ -204,15 +206,28 @@ form input {
 }
 .topicDiv {
   position: absolute;
-  margin-top: -50px;
-  margin-left: 1%;
-  width: 100%;
+  width: 30px !important;
+  margin-top: -40px;
+  margin-left: 30%;
+  text-align: center;
+}
+
+.stateDiv {
+  position: absolute;
+  margin-top: -40px;
+  margin-left: 55%;
+  width: 10%;
   text-align: center;
 }
 
 .topic {
   font-weight: bold;
   font-size: 1.5em;
+}
+
+.titleDiv {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 /* Loading spinner
