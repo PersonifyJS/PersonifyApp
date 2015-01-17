@@ -12,6 +12,13 @@ To see the app in action, visit http://personify.mybluemix.net.
 ### The application utilizes:
   - Watson User Modeling service extracts cognitive and social characteristics, including Big Five, Values, and Needs, from communications data provided
   - Twitter REST API
+  - 
+  
+##Screenshots
+
+![Screenshot1](https://s3-us-west-1.amazonaws.com/personify.js/Screen1.png)
+![Screenshot2](https://s3-us-west-1.amazonaws.com/personify.js/Screen2.png)
+![Screenshot3](https://s3-us-west-1.amazonaws.com/personify.js/Screen3.png)
 
 ## Contributing
 
