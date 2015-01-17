@@ -1,0 +1,12 @@
+Showing health and status for app Personify in org essam.abood84@gmail.com / space essamabood84 as essam.abood84@gmail.com...
+OK
+
+requested state: started
+instances: 0/2
+usage: 1G x 2 instances
+urls: personify.mybluemix.net
+last uploaded: Wed Jan 14 19:03:12 +0000 2015
+
+     state      since                    cpu    memory   disk   
+#0   crashing   2015-01-16 02:26:45 PM   0.0%   0 of 0   0 of 0   
+#1   crashing   2015-01-16 02:27:15 PM   0.0%   0 of 0   0 of 0   

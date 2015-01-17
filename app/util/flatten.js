@@ -14,7 +14,7 @@ var NAME_SUBST = {
 
 // Aux function to flatten the traits structure returned by the User Modeling service
 var flatten = function(/*object*/ tree) {
-  var arr = [], f = function(t, level) {
+  var arr = [], flattenFunc = function(t, level) {
     if (!t) return;
     //Check if the trait name can be replaced
     if (NAME_SUBST[t.name])
@@ -29,11 +29,11 @@ var flatten = function(/*object*/ tree) {
     }
     if (t.children && t.id!='sbh') {
       for (var i=0; i<t.children.length; i++) {
-        f(t.children[i], level+1);
+        flattenFunc(t.children[i], level+1);
       }
     }
   };
-  f(tree, 0);
+  flattenFunc(tree, 0);
   return arr; 
 }
 module.exports.flat = flatten;
