@@ -7,9 +7,9 @@ var extend = require('util')._extend;
 var flatten = require('../app/util/flatten');
 
 // defaults for dev outside bluemix
-var service_url = 'https://gateway.watsonplatform.net/systemu/service/';
-var service_username = '1c3eadc8-e5bc-4317-bf02-b32178b288ac';
-var service_password = 'dm6pKfaMFeWa';
+var service_url = process.env.SERVICE_URL;
+var service_username = process.env.SERVICE_USERNAME;
+var service_password = process.env.SERVICE_PASSWORD;
 
 // Object to be sent to the client 
 var flatTraitsArray = {USdata: null, stateData: null};
