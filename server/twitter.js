@@ -7,10 +7,10 @@ var dataFromTwitterPerState;
 
 module.exports.twitterData = function(req, res) {
   var T = new Twit({
-          consumer_key:         'nnnMzv63aJKbQgzF77vQLXCm0'
-        , consumer_secret:      'BAG1XL3PHUVw6AsW7K0dRcIv6qkITkWARmZL9Bb8nOKfTkbTpo'
-        , access_token:         '35398491-9KTshSy7QNiKh0Ia71AeZ6D1XMg6teKJWAwp6YNNE'
-        , access_token_secret:  'ivIGOcV4OHxW9lRrW7pevEcxwtk2RDGzVSW6IdOqz9R0D'
+          consumer_key:         process.env.KEY
+        , consumer_secret:      process.env.SECRET
+        , access_token:         process.env.TOKEN
+        , access_token_secret:  process.env.TOKEN_SECRET
   });
   
   // create a profile request with the text and the htpps options and call it
