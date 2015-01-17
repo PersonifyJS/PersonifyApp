@@ -6,12 +6,10 @@ var querystring = require('querystring');
 var extend = require('util')._extend;
 var flatten = require('../app/util/flatten');
 
-var appInfo = JSON.parse(process.env.VCAP_APPLICATION || "{}");
-
 // defaults for dev outside bluemix
-var service_url = "https://gateway.watsonplatform.net/systemu/service/";
-var service_username = "1c3eadc8-e5bc-4317-bf02-b32178b288ac";
-var service_password = "dm6pKfaMFeWa";
+var service_url = 'https://gateway.watsonplatform.net/systemu/service/';
+var service_username = '1c3eadc8-e5bc-4317-bf02-b32178b288ac';
+var service_password = 'dm6pKfaMFeWa';
 
 // Object to be sent to the client 
 var flatTraitsArray = {USdata: null, stateData: null};
@@ -37,7 +35,7 @@ if (process.env.VCAP_SERVICES) {
 
 console.log('service_url = ' + service_url);
 console.log('service_username = ' + service_username);
-console.log('service_password = ' + new Array(service_password.length).join("X"));
+console.log('service_password = ' + new Array(service_password.length).join('X'));
 
 var auth = 'Basic ' + new Buffer(service_username + ':' + service_password).toString('base64');
 
@@ -48,7 +46,7 @@ module.exports.watson =  function(data, res, called) {
   var parts = url.parse(service_url.replace(/\/$/,''));
   var profile_options = { host: parts.hostname,
     port: parts.port,
-    path: parts.pathname + "/api/v2/profile",
+    path: parts.pathname + '/api/v2/profile',
     method: 'POST',
     headers: {
       'Content-Type'  :'application/json',
@@ -65,7 +63,7 @@ module.exports.watson =  function(data, res, called) {
 
       // Extend the profile options and change the request path to get the visualization
       // Path to visualization is /api/v2/visualize, add w and h to get 900x900 chart
-      var viz_options = extend(profile_options, { path :  parts.pathname + "/api/v2/visualize?w=900&h=900&imgurl=%2Fimages%2Fapp.png"})
+      var viz_options = extend(profile_options, { path :  parts.pathname + '/api/v2/visualize?w=900&h=900&imgurl=%2Fimages%2Fapp.png'})
 
       // create a visualization request with the profile data
       create_viz_request(viz_options,profile_string)(function(error,viz) {
@@ -114,12 +112,18 @@ var create_profile_request = function(options,content, res) {
       result.on('end', function() {
 
         if (result.statusCode != 200) {
-          var error = JSON.parse(response_string);
+          try {
+            var error = JSON.parse(response_string);
+          }
+          catch (e) {
+            console.log('Error: response_string is not a JSON object!')
+          }
           // render error if the results are less than 100 words
-          res.send({"error" : "Watson: Oh, dear. It looks like there aren't enough tweets to conduct an analysis. Kindly send me another search query."});
+          res.send({'error' : 'Watson: Oh, dear. It looks like there aren\'t enough tweets to conduct an analysis. Kindly send me another search query.'});
           callback({'message': error.user_message}, null);
-        } else
+        } else {
           callback(null,response_string);
+        }
       });
     });
   

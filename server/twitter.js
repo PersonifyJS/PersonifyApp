@@ -17,7 +17,7 @@ module.exports.twitterData = function(req, res) {
     // `req.body.subject` is the subject that was entered by the end user
     // TODO: to have the end user enter the date
     var analyzeState = function () {
-      dataFromTwitterPerState = "";
+      dataFromTwitterPerState = '';
       console.log('analyzeState')
       T.get('search/tweets', { q: ''+req.body.subject+' since:2014-01-01', 
                                count: 5000, geocode: req.body.geo, lang: 'en' },
@@ -31,7 +31,7 @@ module.exports.twitterData = function(req, res) {
     };
 
     var analyzeNation = function() {
-      dataFromTwitterUS = "";
+      dataFromTwitterUS = '';
       console.log('analyzeNation')
       // geoUS: the geo location of United States
       var geoUS = ['39.8','-95.583068847656','2500km']

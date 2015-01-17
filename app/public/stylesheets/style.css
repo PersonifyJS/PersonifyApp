@@ -1,7 +1,5 @@
 /*output css
 =========*/
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,300,600,400);
-
 body {
   font-family: 'Open Sans', sans-serif;
 }
@@ -52,8 +50,16 @@ form {
   cursor: pointer;
 }
 
+.team {
+  margin-bottom: 70px;
+}
+
 .theApp a:active {
   color: #ecf0f1 !important;
+}
+
+.middle-pic {
+  width: 240px;
 }
 
 .btn {
@@ -334,7 +340,6 @@ li {
 
 /*Temp chart
 ===========*/
-@import url(//fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 svg {
   font: 14px 'Open Sans';
